@@ -1,4 +1,4 @@
-name: First Workflow
+name: Practice Workflow
 
 on:
   push:
@@ -6,15 +6,24 @@ on:
       - main
 
 jobs:
-  hello:
+  practice:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: List Files
-        run: ls
+      - name: Current Directory
+        run: pwd
 
-      - name: Print Message
-        run: echo "Hello from GitHub Actions"
+      - name: List Files
+        run: ls -la
+
+      - name: Node Version
+        run: node -v
+
+      - name: Python Version
+        run: python --version
+
+      - name: Custom Message
+        run: echo "I started GitHub Actions journey"
